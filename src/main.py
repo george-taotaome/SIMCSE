@@ -41,9 +41,9 @@ def read_root(sim_dto: dto.Queue):
         res = simcse.sim_query(sim_dto.text, sim_dto.limit)
     except Exception as ex:
         logging.error(ex)
-        return {"result": False, "message": "发生异常错误"}
+        return {"result": False, "message": "error"}
     try:
-        return {"result": res, "message": "操作成功"}
+        return {"result": res, "message": "ok"}
     except Exception as ex:
         logging.error(ex)
 
