@@ -127,8 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# data/model
-src/data/all.txt
-src/data/simcse.trained.index
-src/model/*
