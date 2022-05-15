@@ -36,7 +36,7 @@ app = FastAPI()
 语义匹配查询
 """
 @app.post("/sim")
-def read_root(sim_dto: dto.Queue):
+async def read_root(sim_dto: dto.Queue):
     try:
         res = simcse.sim_query(sim_dto.text, sim_dto.limit)
     except Exception as ex:
