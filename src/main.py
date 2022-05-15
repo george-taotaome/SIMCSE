@@ -13,7 +13,7 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--train_file", type=str, default="./data/all.txt", help="train text file")
     parser.add_argument("--pretrained", type=str, default="hfl/chinese-bert-wwm-ext", help="huggingface pretrained model")
-    parser.add_argument("--model", type=str, default="./model/epoch_16-batch_6000-loss_0.029720", help="model file")
+    parser.add_argument("--model", type=str, default="./model/epoch_7-batch_2700-loss_0.094469", help="model file")
     parser.add_argument("--max_length", type=int, default=100, help="sentence max length")
     parser.add_argument("--batch_size", type=int, default=64, help="batch size")
     parser.add_argument("--device", type=str, default="cpu", help="device")
