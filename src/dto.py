@@ -6,3 +6,6 @@ from pydantic import BaseModel
 class Queue(BaseModel):
     text: str
     limit: Optional[int] = 1
+
+class Cut(BaseModel):
+    text: str

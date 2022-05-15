@@ -6,3 +6,4 @@ tqdm
 transformers==4.18.0
 faiss==1.5.3
 numpy
+jieba

@@ -8,6 +8,7 @@ import uvicorn
 import multiprocessing
 import logging
 import argparse
+import tool
 
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -33,6 +34,36 @@ simcse.index = faiss.read_index(args.index)
 app = FastAPI()
 
 """
+分词
+"""
+@app.post("/cut")
+async def cut(cut_dto: dto.Cut):
+    try:
+        res = tool.cut(cut_dto.text)
+    except Exception as ex:
+        logging.error(ex)
+        return {"result": "False", "message": "error"}
+    try:
+        return {"result": res, "message": "ok"}
+    except Exception as ex:
+        logging.error(ex)
+
+"""
+关键词过滤(*)
+"""
+@app.post("/filter")
+async def filter(cut_dto: dto.Cut):
+    try:
+        res = tool.filter(cut_dto.text)
+    except Exception as ex:
+        logging.error(ex)
+        return {"result": "False", "message": "error"}
+    try:
+        return {"result": res, "message": "ok"}
+    except Exception as ex:
+        logging.error(ex)
+
+"""
 语义匹配查询
 """
 @app.post("/sim")
@@ -46,6 +77,7 @@ async def read_root(sim_dto: dto.Queue):
         return {"result": res, "message": "ok"}
     except Exception as ex:
         logging.error(ex)
+
 
 if __name__ == '__main__':
     log_fmt = "%(asctime)s|%(name)s|%(levelname)s|%(message)s"

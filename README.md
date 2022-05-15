@@ -1,7 +1,7 @@
 # SIMCSE
 ## train
 ```
-python train.py ./data/all.txt --epochs=8
+python train.py ./data/all.txt --epochs=10
 ````
 
 ## build index
@@ -43,3 +43,6 @@ docker run -it --rm -p 8000:8000 --name simcse simcse
 测试2： 使用 model = epoch_16-batch_6000-loss_0.029720，新增85条新样本重新训练
 正常样本：最小相似度=0.9047877788543700，大于0.59相似度的合格率为100%  具体看positive_old.csv
 异常样本：最大相似度=0.587344437837601  具体看negative_old.csv
+
+---
+增加关键词过滤
