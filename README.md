@@ -46,6 +46,6 @@ docker run -it --rm -p 8000:8000 --name simcse simcse
 
 ---
 增加关键词过滤  
-dict.txt: 自定义词典
-stop.txt: 停止词
-bad.txt:  敏感词
+dict.txt: 自定义词典  
+stop.txt: 停止词  
+bad.txt:  敏感词  
