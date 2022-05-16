@@ -23,9 +23,10 @@ def cut(text):
 def lcut(text):
     return "/".join(jieba.lcut(text.replace(' ', '')))
 
+# 停用词
 def stopwords():
     stopwords = set()
-    with open('data/stop.txt', 'r', encoding='utf-8', errors='ignore') as fp:
+    with open('./data/stop.txt', 'r', encoding='utf-8', errors='ignore') as fp:
         for line in fp:
             stopwords.add(line.strip())
     return stopwords
